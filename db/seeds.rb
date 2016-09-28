@@ -6,11 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-10.times do |n|
-  title  = "title#{n+1}"
-  content = "test"
-  category = "インフォ"
-  Topic.create!(title:  title,
-               content: content,
-               category:              category)
-end
+User.create!(email: admin@hosei.com,
+             password: hoseirugby)
