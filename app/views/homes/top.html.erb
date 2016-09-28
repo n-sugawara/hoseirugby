@@ -94,7 +94,7 @@
 </div>
 <div class="top-player">
   <%=link_to players_path do %>
-  <div class="top-player-image">
+  <div class="top-player-image" style="background-image: url(<%= asset_path "top-image.jpg" %>)">
     <h2>選手一覧</h2>
   </div>
   <% end %>
@@ -102,7 +102,7 @@
 
 <div class="top-information">
   <%=link_to homes_history_path do %>
-  <div class="top-information-image">
+  <div class="top-information-image" style="background-image: url(<%= asset_path "top-image.jpg" %>)">
     <h2>チーム情報</h2>
   </div>
   <% end %>
@@ -114,7 +114,7 @@
 
 <div class="top-serch">
   <%=link_to photos_path do %>
-  <div class="top-information-image">
+  <div class="top-information-image" style="background-image: url(<%= asset_path "top-image.jpg" %>)">
     <h2>選手写真検索</h2>
   </div>
   <% end %>
