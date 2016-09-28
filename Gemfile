@@ -42,6 +42,7 @@ gem 'kaminari'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'sqlite3', require: false
 end
 
 group :development do
@@ -51,10 +52,8 @@ group :development do
   gem 'spring'
 end
 
-gem 'sqlite3', groups: %w(test development), require: false
-gem 'pg', groups: %w(production), require: false
-
 group :production do
+  gem 'pg', require: false
   gem 'rails_12factor', '0.0.2'
   gem 'puma',           '2.11.1'
 end
