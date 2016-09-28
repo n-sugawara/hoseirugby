@@ -31,10 +31,12 @@ class PlayersController < ApplicationController
   # GET /players/new
   def new
     @player = Player.new
+    @sideresults = Result.order(created_at: :desc)
   end
 
   # GET /players/1/edit
   def edit
+    @sideresults = Result.order(created_at: :desc)
   end
 
   # POST /players

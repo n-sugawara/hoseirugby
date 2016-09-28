@@ -24,6 +24,7 @@ class ResultsController < ApplicationController
 
   # GET /results/1/edit
   def edit
+    @sideresults = Result.order(created_at: :desc)
   end
 
   # POST /results

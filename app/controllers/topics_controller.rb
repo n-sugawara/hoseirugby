@@ -19,10 +19,12 @@ class TopicsController < ApplicationController
   # GET /topics/new
   def new
     @topic = Topic.new
+    @sideresults = Result.order(created_at: :desc)
   end
 
   # GET /topics/1/edit
   def edit
+    @sideresults = Result.order(created_at: :desc)
   end
 
   # POST /topics

@@ -28,10 +28,12 @@ class PhotosController < ApplicationController
   # GET /photos/new
   def new
     @photo = Photo.new
+    @sideresults = Result.order(created_at: :desc)
   end
 
   # GET /photos/1/edit
   def edit
+    @sideresults = Result.order(created_at: :desc)
   end
 
   # POST /photos
