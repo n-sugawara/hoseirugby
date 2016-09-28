@@ -1,0 +1,19 @@
+<li class="player-list">
+  <%= link_to player_path(player.id) do %>
+    <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+    <div class="player-list-detail">
+      <div class="player-list-gakunen">
+      <%= player.gakunen %>年
+    </div>
+    <div class="player-list-yomi">
+      <%= player.yomi %>
+      </div>
+      <div class="player-list-name">
+    <%= player.name %>
+    </div>
+    </div>
+<% end %>
+    <!-- <td><%= link_to 'Show', player %></td>
+<td><%= link_to 'Edit', edit_player_path(player) %></td>
+<td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+</li>

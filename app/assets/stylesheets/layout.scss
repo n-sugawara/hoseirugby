@@ -1,0 +1,348 @@
+body{
+  margin: 0;
+}
+
+.content{
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+}
+
+.all{
+  width: 940px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.left-content{
+  float: left;
+  display: block;
+  width: 620px;
+  height: auto;
+  box-sizing: border-box;
+}
+
+//サイドコンテンツ
+
+.side-content{
+  float: right;
+  display: block;
+  width: 300px;
+  height: auto;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+.side-content ul{
+  margin: 0;
+}
+.side-content h3{
+  margin: 0;
+  padding: .75em 1em;
+	border-bottom: 1px solid #ccc;
+	border-top: 3px solid rgb(83, 83, 103);
+	background: -webkit-linear-gradient(top, #fff 0%, #f0f0f0 100%);
+	background: linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
+	box-shadow: 0 -1px 0 rgba(255, 255, 255, 1) inset;
+}
+
+.side-content li:nth-child(2n){
+  background: #eee;
+}
+
+.topic-side-list{
+  padding: 10px 0;
+}
+
+.topic-side-list a:hover{
+  color: #ccc;
+}
+
+.topic-side-category{
+  padding: .05em 1em;
+  font-size: 11px;
+}
+
+.topic-side-detail{
+  padding: .3em 1em;
+  font-weight: 600;
+}
+
+//sideコンテンツ試合結果ーーーーーーーーーーーーーーー
+.result-side-list{
+  padding: 10px 0;
+}
+
+.result-side-list a:hover{
+  color: #ccc;
+}
+
+.result-side-time{
+  padding: .05em 1em;
+  font-size: 11px;
+}
+
+.result-side-kekka{
+  padding: .3em 1em;
+  font-weight: 600;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+a:link{
+  color: #383838;
+  text-decoration: none;
+}
+a:visited{
+  color: #383838;
+  text-decoration: none;
+}
+a:hover{
+  color: #383838;
+  text-decoration: none;
+}
+a:active{
+  color: #383838;
+}
+
+/* ヘッダー ================================ */
+
+.header {
+    background: #f7a84d;
+    height: 30px;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    padding: 0;
+}
+
+.header-content{
+  width: 940px;
+  margin: 0 auto;
+  height: 30px;
+}
+
+.logo {
+    width: 110px;
+    color: white;
+    height: 30px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 30px;
+    display: inline-block;
+}
+
+.logo img{
+  height: 25px;
+  width: auto;
+  text-align: 30px;
+  margin: 2px 0 3px 0;
+}
+
+.logo a{
+  display: block;
+}
+
+.logo a:hover{
+  background: none;
+}
+/*ナビゲーションタイトル*/
+.nav-title {
+    float: right;
+    color: white;
+    font-size: 13px;
+    display: block;
+    line-height: 30px;
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.nav-title > a:visited {
+    text-decoration: none;
+}
+
+/* カテゴリヘッダー ================================ */
+.header-second {
+    display: block;
+    top: 30px;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 5000;
+    background: rgba(30, 28, 41, 0.8);
+}
+
+.header-second-content {
+    display: block;
+    margin: 0 auto;
+    width: 940px;
+    height: 60px;
+    padding: 0;
+}
+
+.nav-item-second {
+    float: left;
+    width: 14.28%;
+    text-align: center;
+    color: white;
+}
+
+.nav-item-second > a {
+    font-size: 12px;
+    line-height: 60px;
+    font-weight: 600;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-item-second > a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+/* トップimage ================================ */
+
+.top-image{
+  background-image: url("top-image.jpg");
+  background-position: center center;
+  background-size: cover;
+  display: block;
+  position: relative;
+  top: 30px;
+  height: 500px;
+  width: 100%;
+}
+
+.top-image-content{
+  padding-top: 80px;
+  width: 940px;
+  height: 200px;
+  margin: 0 auto;
+}
+.top-image h1{
+  font-size: 40px;
+  line-height: 70px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.5);
+}
+
+.top-result1{
+  width: 30%;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  padding: 15px;
+  margin: 0 auto;
+  color: black;
+}
+
+.top-result1 a:visited{
+  color: black;
+}
+
+.top-result1 ul{
+  margin: 0;
+}
+
+.top-result1-date{
+  border-bottom: 1px solid white;
+  padding: 4px 0 8px 0;
+}
+
+
+.top-result1-my{
+  display: block;
+  float: left;
+  text-align: center;
+  width: 40%;
+  margin-top: 4px;
+  height: 130px;
+}
+
+.result-middle{
+  display: block;
+  float: left;
+  text-align: center;
+  font-size: 40px;
+  width: 20%;
+  height: 120px;
+  line-height: 120px;
+}
+
+.top-result1-team{
+  margin: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.top-result1-goal{
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 600;
+}
+
+/* footer ================================ */
+.footer {
+    display: block;
+    width: 100%;
+    height: 60px;
+    z-index: 5000;
+    background: rgba(246, 142, 5, 0.92);
+}
+
+.footer-content {
+    display: block;
+    margin: 0 auto;
+    width: 940px;
+    height: 60px;
+    padding: 0;
+}
+
+.footer-item {
+    float: left;
+    width: 14.28%;
+    text-align: center;
+    color: white;
+}
+
+.footer-item > a {
+    font-size: 12px;
+    line-height: 60px;
+    font-weight: 600;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-item > a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-second{
+  width: 100%;
+  height: 40px;
+  background: rgba(6, 103, 166, 1);
+}
+
+.footer-second-content{
+  width: 940px;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-second-content p{
+  margin: 0;
+  font-size: 3px;
+  line-height: 20px;
+  color: white;
+}

@@ -1,0 +1,110 @@
+<%= form_for(@result) do |f| %>
+<% if @result.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(@result.errors.count, "error") %>
+        prohibited this result from being saved:</h2>
+
+    <ul>
+        <% @result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="field">
+    <%= f.label :time %><br>
+    <%= f.datetime_select :time %>
+</div>
+<div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+</div>
+<div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_field :place %>
+</div>
+
+<div class="myteam">
+    <div class="field">
+        <%= f.label :team %><br>
+        <%= f.text_field :team %>
+    </div>
+    <table>
+      <tr><th></th><th>T</th><th>G</th><th>PG</th><th>DG</th></tr>
+      <tr><th>前半</th><th><%= f.number_field :score_first_t %></th><th><%= f.number_field :score_first_g %></th><th><%= f.number_field :score_first_pg %></th><th><%= f.number_field :score_first_dg %></th></tr>
+      <tr><th>後半</th><th><%= f.number_field :score_second_t %></th><th><%= f.number_field :score_second_g %></th><th><%= f.number_field :score_second_pg %></th><th><%= f.number_field :score_second_dg %></th></tr>
+    </table>
+</div>
+
+<div class="opponent-team">
+  <h2>相手チーム</h2>
+    <%= f.label :opponent %><br>
+    <%= f.text_field :opponent %>
+    <br>
+    <table>
+      <tr><th></th><th>T</th><th>G</th><th>PG</th><th>DG</th></tr>
+      <tr><th>前半</th><th><%= f.number_field :opponent_score_first_t %></th><th><%= f.number_field :opponent_score_first_g %></th><th><%= f.number_field :opponent_score_first_pg %></th><th><%= f.number_field :opponent_score_first_dg %></th></tr>
+      <tr><th>後半</th><th><%= f.number_field :opponent_score_second_t %></th><th><%= f.number_field :opponent_score_second_g %></th><th><%= f.number_field :opponent_score_second_pg %></th><th><%= f.number_field :opponent_score_second_dg %></th></tr>
+    </table>
+</div>
+
+<div class="position-form">
+  <h2>ポジション</h2>
+    <%= f.label :ho %><br>
+    <%= f.collection_select :ho, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :rpr %><br>
+    <%= f.collection_select :rpr, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :lpr %><br>
+    <%= f.collection_select :lpr, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :rlo %><br>
+    <%= f.collection_select :rlo, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :llo %><br>
+    <%= f.collection_select :llo, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+
+    <%= f.label :rfl %><br>
+    <%= f.collection_select :rfl, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :lfl %><br>
+    <%= f.collection_select :lfl, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :n08 %><br>
+    <%= f.collection_select :n08, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :sh %><br>
+    <%= f.collection_select :sh, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :so %><br>
+    <%= f.collection_select :so, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :rctb %><br>
+    <%= f.collection_select :rctb, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :lctb %><br>
+    <%= f.collection_select :lctb, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :rwtb %><br>
+    <%= f.collection_select :rwtb, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :lwtb %><br>
+    <%= f.collection_select :lwtb, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <%= f.label :fb %><br>
+    <%= f.collection_select :fb, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+</div>
+<div class="last-results-form">
+    <%= f.label :backupplayer %><br>
+    <%= f.collection_select :backupplayer, Player.all, :id, :name, :prompt => "選択してください" %>
+    <br>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+    <%= link_to 'Back', results_path %>
+</div>
+<% end %>

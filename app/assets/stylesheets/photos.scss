@@ -1,0 +1,50 @@
+// Place all the styles related to the photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.photo-ul{
+  overflow: auto;
+  height: auto;
+}
+
+.photo-list{
+  float: left;
+  width: 31%;
+  margin-right: 14px;
+  margin-bottom: 15px;
+}
+
+.photo-image{
+  height: 160px;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+
+.photo-h1{
+  padding: .75em 1em;
+	border: 1px solid #ccc;
+	border-top: 3px solid rgb(83, 83, 103);
+	background: -webkit-linear-gradient(top, #fff 0%, #f0f0f0 100%);
+	background: linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
+	box-shadow: 0 -1px 0 rgba(255, 255, 255, 1) inset;
+  margin: 0 0 20px 0;
+}
+
+
+//photo showページ
+.photo-show-h1{
+  padding: .75em 1em;
+	border: 1px solid #ccc;
+	border-top: 3px solid rgb(83, 83, 103);
+	background: -webkit-linear-gradient(top, #fff 0%, #f0f0f0 100%);
+	background: linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
+	box-shadow: 0 -1px 0 rgba(255, 255, 255, 1) inset;
+  margin: 0 0 20px 0;
+}
+
+.photo-show-image{
+  height: 400px;
+  background-position: center center;
+  background-size: cover;
+}

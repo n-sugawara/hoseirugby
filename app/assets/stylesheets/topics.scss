@@ -1,0 +1,77 @@
+// Place all the styles related to the topics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* トピック一覧ページ ================================ */
+.topics-content{
+  display: block;
+  width: auto;
+  margin: 20px 0;
+}
+
+.topics-content h1{
+  padding: .75em 1em;
+	border: 1px solid #ccc;
+	border-top: 3px solid rgb(83, 83, 103);
+	background: -webkit-linear-gradient(top, #fff 0%, #f0f0f0 100%);
+	background: linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
+	box-shadow: 0 -1px 0 rgba(255, 255, 255, 1) inset;
+}
+
+.topic-category{
+  padding: 2px 0 2px 8px;
+  padding: .2em 1em;
+  border: 1px solid #ccc;
+  border-top: 3px solid rgb(83, 83, 103);
+  background: -webkit-linear-gradient(top, #fff 0%, #f0f0f0 100%);
+  background: linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 1) inset;
+}
+
+.topic-list{
+  display: block;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.topic-list > a:hover{
+  color: rgb(247, 168, 77);
+}
+
+.topic-detail{
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  padding: 10px;
+  border-radius: 0 0 3px 3px;
+  border: 1px solid rgba(0,0,0,.09);
+}
+
+/* トピック詳細ページ ================================ */
+
+
+.topic-detail-category{
+  height: 20px;
+  font-size: 11px;
+  line-height: 20px;
+  padding: 2px 5px;
+  display: inline-block;
+  border-radius: 3px;
+  background: rgb(247, 168, 77);
+  color: white;
+}
+
+.topic-detail-title{
+  font-size: 32px;
+}
+
+.topic-detail-image img{
+  width: 600px;
+}
+
+.topic-detail-content{
+  margin-top: 15px;
+  font-size: 15px;
+  line-height: 1.5em;
+}

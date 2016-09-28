@@ -1,0 +1,33 @@
+<%= render 'layouts/header2' %>
+<div class="content">
+  <div class="all">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<div class=topics-content>
+    <p id="notice"><%= notice %></p>
+    <h1>Topics</h1>
+    <ul>
+        <% @topics.each do |topic| %>
+        <li class="topic-list">
+            <%= link_to topic_path(topic.id) do %>
+            <div class="topic-category"><%= topic.category %></div>
+            <div class="topic-detail">
+                <%= topic.data %>
+                <%= topic.title %>
+            </div>
+            <% end %>
+            <% if user_signed_in? %>
+            <%= link_to 'Show', topic %>
+            <%= link_to 'Edit', edit_topic_path(topic) %>
+            <%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+        </li>
+        <% end %>
+    </ul>
+    <% if user_signed_in? %>
+    <%= link_to 'New Topic', new_topic_path %>
+    <% end %>
+    <%= paginate @topics %>
+</div>
+</div>
+</div>

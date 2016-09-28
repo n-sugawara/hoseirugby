@@ -1,0 +1,281 @@
+<%= render 'layouts/header2' %>
+<div class="content">
+  <div class="all">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<p id="notice"><%= notice %></p>
+<div class="left-content">
+<div class="players">
+<h1>Players</h1>
+    <h2>PR</h2>
+    <ul>
+      <% @pr.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+
+    <h2>HO</h2>
+    <ul>
+      <% @ho.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+    <h2>LO</h2>
+    <ul>
+      <% @lo.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+
+    <h2>FL</h2>
+    <ul>
+      <% @fl.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+
+    <h2>NO.8</h2>
+    <ul>
+      <% @no8.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+
+    <h2>SH</h2>
+    <ul>
+      <% @sh.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+
+    <h2>SO</h2>
+    <ul>
+      <% @so.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+
+
+    <h2>CTB</h2>
+    <ul>
+      <% @ctb.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+
+    <h2>WTB</h2>
+    <ul>
+      <% @wtb.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+
+    <h2>FB</h2>
+    <ul>
+      <% @fb.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+
+    <h2>COACH</h2>
+    <ul>
+      <% @coach.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+
+    <h2>STAFF</h2>
+    <ul>
+      <% @staff.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+    <br>
+<% if user_signed_in? %>
+    <%= link_to 'New Player', new_player_path %>
+<% end %>
+</div>
+</div>
+<%= render 'layouts/sidebar' %>
+</div>
+</div>

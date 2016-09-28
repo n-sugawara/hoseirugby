@@ -1,0 +1,95 @@
+<%= render 'layouts/header2' %>
+<div class="content">
+  <div class="all">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<p id="notice"><%= notice %></p>
+<div class="left-content">
+<h2 class="player-h2"><%= @player.name %>のプロフィール</h2>
+
+<div class="player-list">
+    <div class="player-list-image" style="background-image: url(<%= asset_path @player.image %>)"></div>
+    <div class="player-list-detail">
+        <div class="player-list-gakunen">
+            <%= @player.gakunen %>年
+        </div>
+        <div class="player-list-yomi">
+            <%= @player.yomi %>
+        </div>
+        <div class="player-list-name">
+            <%= @player.name %>
+        </div>
+    </div>
+</div>
+
+<table class="player-detail">
+    <tbody class="player-tbody">
+        <tr>
+            <th class="player-dai">よみがな</th>
+            <th class="player-setumei"><%= @player.yomi %></th>
+        </tr>
+        <tr>
+            <th class="player-dai">名前</th>
+            <th class="player-setumei"><%= @player.name %></th>
+        </tr>
+        <tr>
+            <th class="player-dai">ポジション</th>
+            <th class="player-setumei"><%= @player.position %></th>
+        </tr>
+        <tr>
+            <th class="player-dai">身長/体重</th>
+            <th class="player-setumei"><%= @player.height %>cm/<%= @player.weight %>kg</th>
+        </tr>
+        <tr>
+            <th class="player-dai">学部</th>
+            <th class="player-setumei"><%= @player.gakubu %>学部</th>
+        </tr>
+        <tr>
+            <th class="player-dai">学年</th>
+            <th class="player-setumei"><%= @player.gakunen %>年</th>
+        </tr>
+        <tr>
+            <th class="player-dai">出身高校</th>
+            <th class="player-setumei"><%= @player.highscool %></th>
+        </tr>
+    </tbody>
+</table>
+
+<div class="player-more">
+  <h3>経歴</h3>
+    <div class="player-career">
+        <%= @player.career %>
+    </div>
+    <div class="player-comment">
+
+        <%= @player.comment %>
+    </div>
+<% if user_signed_in? %>
+    <%= link_to 'Edit', edit_player_path(@player) %>
+    |
+    <%= link_to 'Back', players_path %>
+<% end %>
+</div>
+
+<div class="playerphotos">
+  <h3>Player Photos</h3>
+  <ul class="playerphoto-ul">
+  <% @player.photos.each do |photo| %>
+  <li class="photo-list">
+          <%= photo.result.time.strftime("%Y年%m月%d日") %>
+          <div class="photo-image" style="background-image: url(<%= asset_path photo.image %>)"></div>
+          <%= photo.player.name %>
+          <% if user_signed_in? %>
+          <%= link_to 'Show', photo %>
+          <%= link_to 'Edit', edit_photo_path(photo) %>
+          <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+  </li>
+      <% end %>
+  </ul>
+
+</div>
+</div>
+<%= render 'layouts/sidebar' %>
+</div>
+</div>

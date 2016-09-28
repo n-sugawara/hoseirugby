@@ -1,0 +1,61 @@
+<%= form_for(@player, html: { multipart: true }) do |f| %>
+  <% if @player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+      <% @player.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :yomi %><br>
+    <%= f.text_field :yomi %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.select :position,["PR","HO","LO","FL","NO.8","SH","SO","CTB","WTB","FB","COACH","STAFF"] %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :gakubu %><br>
+    <%= f.text_field :gakubu %>
+  </div>
+  <div class="field">
+    <%= f.label :gakunen %><br>
+    <%= f.select :gakunen, ["1","2","3","4"] %>
+  </div>
+  <div class="field">
+    <%= f.label :highscool %><br>
+    <%= f.text_area :highscool %>
+  </div>
+  <div class="field">
+    <%= f.label :career %><br>
+    <%= f.text_area :career %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

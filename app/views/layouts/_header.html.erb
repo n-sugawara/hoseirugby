@@ -1,0 +1,44 @@
+<header class="header">
+  <div class="header-content">
+    <h1 class="logo">
+      <%= link_to root_path, id:"logo" do%>
+      <%= image_tag "logo.png" %>
+      <% end %>
+    </h1>
+    <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
+    <% if user_signed_in? %>
+      <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
+      <!-- *_path はUserモデルを作成したときに、
+        deviseにより自動で作成されてますので、rake routesで確認できます -->
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-title" %>
+    <% else %>
+      <%= link_to "ログイン", new_user_session_path, class:"nav-title" %>
+    <% end %>
+  </div>
+</header>
+
+<div class="header-second">
+    <ul class="header-second-content">
+        <li class="nav-item-second">
+            <%= link_to "TOP", root_path %>
+        </li>
+        <li class="nav-item-second">
+            <%= link_to "TOPICS", '/topics' %>
+        </li>
+        <li class="nav-item-second">
+            <%= link_to "INFO", '/homes/history' %>
+        </li>
+        <li class="nav-item-second">
+            <%= link_to "PLAYER", '/players' %>
+        </li>
+        <li class="nav-item-second">
+            <%= link_to "RESULTS", '/results' %>
+        </li>
+        <li class="nav-item-second">
+            <%= link_to "PHOTO", '/photos' %>
+        </li>
+        <li class="nav-item-second">
+            <%= link_to "SCHEDULE", '/homes/link'%>
+        </li>
+    </ul>
+</div>

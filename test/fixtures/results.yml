@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 2016-08-24 21:12:28
+  category: MyString
+  team: 
+  score_first_t: 1
+  score_first_g: 1
+  score_first_pg: 1
+  score_first_dg: 1
+  score_second_t: 1
+  score_second_g: 1
+  score_second_pg: 1
+  score_second_dg: 1
+  ho: 1
+  rpr: 1
+  lpr: 1
+  rlo: 1
+  llo: 1
+  rfl: 1
+  lfl: 1
+  n08: 1
+  sh: 1
+  so: 1
+  rctb: 1
+  lctb: 1
+  rwtb: 1
+  lwtb: 1
+  fb: 1
+  place: MyString
+
+two:
+  time: 2016-08-24 21:12:28
+  category: MyString
+  team: 
+  score_first_t: 1
+  score_first_g: 1
+  score_first_pg: 1
+  score_first_dg: 1
+  score_second_t: 1
+  score_second_g: 1
+  score_second_pg: 1
+  score_second_dg: 1
+  ho: 1
+  rpr: 1
+  lpr: 1
+  rlo: 1
+  llo: 1
+  rfl: 1
+  lfl: 1
+  n08: 1
+  sh: 1
+  so: 1
+  rctb: 1
+  lctb: 1
+  rwtb: 1
+  lwtb: 1
+  fb: 1
+  place: MyString

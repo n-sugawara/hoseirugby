@@ -1,0 +1,35 @@
+<div class="top-image">
+    <div class="top-image-content">
+        <h1>HOSEI UNIVERSITY<br>
+            RUGNY FOOTBALL TEAM</h1>
+        <div class="top-result1">
+          <ul class="top-result1-ul">
+              <% @sideresults[0,1].each do |result| %>
+              <li class="top-result1-list">
+                  <%= link_to result_path(result.id) do %>
+                  <div class="top-result1-date">
+                  <%= result.time.strftime("%Y年%m月%d日") %>
+                   | <%= result.category %>
+                  </div>
+
+                  <% myresult = result.score_first_t*5 + result.score_first_g*2 + result.score_first_pg*3 + result.score_first_dg*3 + result.score_second_t*5 + result.score_second_g*2 + result.score_second_pg*3 + result.score_second_dg*3 %>
+                  <% opponentresult = result.opponent_score_first_t*5 + result.opponent_score_first_g*2 + result.opponent_score_first_pg*3 + result.opponent_score_first_dg*3 + result.opponent_score_second_t*5 + result.opponent_score_second_g*2 +
+                  result.opponent_score_second_pg*3 + result.opponent_score_second_dg*3 %>
+                  <div class="top-result1-my">
+                  <div class="top-result1-team"><%= result.team %></div>
+                  <div class="top-result1-goal"><%= myresult %></div>
+                  </div>
+                  <div class="result-middle">-</div>
+
+                  <div class="top-result1-my">
+                  <div class="top-result1-team"><%= result.opponent %></div>
+                  <div class="top-result1-goal"><%= opponentresult %></div>
+                  </div>
+
+
+                  <% end %>
+              </li>
+              <% end %>
+        </div>
+    </div>
+</div>

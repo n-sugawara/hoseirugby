@@ -1,0 +1,43 @@
+<%= render 'layouts/header2' %>
+<div class="content">
+  <div class="all">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<p id="notice"><%= notice %></p>
+<div class="left-content">
+
+<h1 class="photo-h1">Listing Photos</h1>
+<div>
+<%= form_tag(photos_path, :method => :get) do %>
+<%= select_tag :player_id, options_from_collection_for_select(Player.all, :id, :name), include_blank: true %>
+<%= select_tag :result_id, options_from_collection_for_select(Result.all, :id, :time), include_blank: true %>
+<%= submit_tag("検索") %>
+<% end %>
+</div>
+
+<ul class="photo-ul">
+<% @photos.each do |photo| %>
+<li class="photo-list">
+  <%= link_to photo_path(photo.id) do %>
+        <%= photo.result.time.strftime("%Y年%m月%d日") %>
+        <div class="photo-image" style="background-image: url(<%= asset_path photo.image %>)"></div>
+        <% end %>
+        <%= photo.player.name %>
+        <% if user_signed_in? %>
+        <%= link_to 'Show', photo %>
+        <%= link_to 'Edit', edit_photo_path(photo) %>
+        <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+</li>
+    <% end %>
+</ul>
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New Photo', new_photo_path %>
+<% end %>
+
+<%= paginate @photos %>
+</div>
+<%= render 'layouts/sidebar' %>
+</div>
+</div>

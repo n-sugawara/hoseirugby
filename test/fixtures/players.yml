@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  yomi: MyString
+  position: MyString
+  height: 1
+  weight: 1
+  gakubu: MyString
+  gakunen: 1
+  highscool: MyText
+  career: MyText
+  image: MyString
+  comment: MyText
+
+two:
+  name: MyString
+  yomi: MyString
+  position: MyString
+  height: 1
+  weight: 1
+  gakubu: MyString
+  gakunen: 1
+  highscool: MyText
+  career: MyText
+  image: MyString
+  comment: MyText

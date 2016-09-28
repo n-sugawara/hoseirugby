@@ -1,0 +1,52 @@
+<%= render 'layouts/header2' %>
+<div class="content">
+  <div class="all">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<p id="notice"><%= notice %></p>
+
+<h1 class="result-h1">試合結果</h1>
+
+<table class="result-table">
+        <tr>
+            <th>日時</th>
+            <th>カテゴリー</th>
+            <th>対戦相手</th>
+            <th>スコア</th>
+            <th>勝敗</th>
+        </tr>
+
+        <% @results.each do |result| %>
+        <tr class="result-list">
+              <th><%= result.time.strftime("%Y年%m月%d日") %></th>
+              <th><%= result.category %></th>
+              <th><%= link_to result_path(result.id) do %><%= result.opponent %><% end %></th>
+              <% myresult = result.score_first_t*5 + result.score_first_g*2 + result.score_first_pg*3 + result.score_first_dg*3 + result.score_second_t*5 + result.score_second_g*2 + result.score_second_pg*3 + result.score_second_dg*3 %>
+              <% opponentresult = result.opponent_score_first_t*5 + result.opponent_score_first_g*2 + result.opponent_score_first_pg*3 + result.opponent_score_first_dg*3 + result.opponent_score_second_t*5 + result.opponent_score_second_g*2 +
+              result.opponent_score_second_pg*3 + result.opponent_score_second_dg*3 %>
+              <th><%= myresult %>
+                  -<%= opponentresult %></th>
+              <th>
+                  <% if myresult > opponentresult %>
+                  ◯
+                  <% elsif myresult < opponentresult %>
+                  ✕
+                  <% else %>
+                  △
+                  <% end %>
+              </th>
+        </tr>
+        <% if user_signed_in? %>
+            <th><%= link_to 'Show', result %></th>
+            <th><%= link_to 'Edit', edit_result_path(result) %></th>
+            <th><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+        <% end %>
+        <% end %>
+</table>
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New Result', new_result_path %>
+<% end %>
+<%= paginate @results %>
+</div>
+</div>
