@@ -19,6 +19,7 @@ class ResultsController < ApplicationController
   # GET /results/new
   def new
     @result = Result.new
+    @sideresults = Result.order(created_at: :desc)
   end
 
   # GET /results/1/edit
