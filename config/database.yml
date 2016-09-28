@@ -22,6 +22,8 @@ test:
 
 production:
   adapter: postgresql
-  database: db/production.pg
+  database: d3q40l6qmbhnq1
   encoding: unicode
   pool: 5
+  username: numawndakaiorv
+  password: 8d26kbbOKc6N6TgIrIvzr-HG0X
