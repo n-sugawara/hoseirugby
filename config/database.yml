@@ -25,5 +25,7 @@ production:
   database: d3q40l6qmbhnq1
   encoding: unicode
   pool: 5
+  port: 5432
+  host: ec2-54-243-204-74.compute-1.amazonaws.com
   username: numawndakaiorv
   password: 8d26kbbOKc6N6TgIrIvzr-HG0X
