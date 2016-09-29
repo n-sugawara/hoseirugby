@@ -7,7 +7,7 @@
 <div class="left-content">
   <h1 class="photo-show-h1"><%= @photo.player.name %>のPhoto</h1>
   <%= @photo.result.time.strftime("%Y年%m月%d日") %>
-  <div class="photo-show-image" style="background-image: url(<%= asset_path @photo.image %>)"></div>
+  <div class="photo-show-image" style="background-image: url(<%= asset_path @photo.image.url %>)"></div>
 
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_photo_path(@photo) %> |

@@ -8,7 +8,7 @@
 <h2 class="player-h2"><%= @player.name %>のプロフィール</h2>
 
 <div class="player-list">
-    <div class="player-list-image" style="background-image: url(<%= asset_path @player.image %>)"></div>
+    <div class="player-list-image" style="background-image: url(<%= asset_path @player.image.url %>)"></div>
     <div class="player-list-detail">
         <div class="player-list-gakunen">
             <%= @player.gakunen %>年
@@ -77,7 +77,7 @@
   <% @player.photos.each do |photo| %>
   <li class="photo-list">
           <%= photo.result.time.strftime("%Y年%m月%d日") %>
-          <div class="photo-image" style="background-image: url(<%= asset_path photo.image %>)"></div>
+          <div class="photo-image" style="background-image: url(<%= asset_path photo.image.url %>)"></div>
           <%= photo.player.name %>
           <% if user_signed_in? %>
           <%= link_to 'Show', photo %>

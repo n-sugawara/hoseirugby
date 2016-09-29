@@ -75,7 +75,7 @@
     <% lpr = Player.find_by(id: @result.lpr)%>
     <% if !@result.lpr.nil? %>
     <%= link_to player_path(@result.lpr) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path lpr.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path lpr.image.url %>)"></div>
       <div class="position-player">
         <%= lpr.name %>/<%= lpr.gakunen %>年
         <b>PR</b>
@@ -93,7 +93,7 @@
     <% ho = Player.find_by(id: @result.ho)%>
     <% if !@result.ho.nil? %>
     <%= link_to player_path(@result.ho) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path ho.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path ho.image.url %>)"></div>
       <div class="position-player">
         <%= ho.name %>/<%= ho.gakunen %>年
         <b>HO</b>
@@ -111,7 +111,7 @@
     <% rpr = Player.find_by(id: @result.rpr)%>
     <% if !@result.rpr.nil? %>
     <%= link_to player_path(@result.rpr) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path rpr.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path rpr.image.url %>)"></div>
       <div class="position-player">
         <%= rpr.name %>/<%= rpr.gakunen %>年
         <b>PR</b>
@@ -129,7 +129,7 @@
     <% llo = Player.find_by(id: @result.llo)%>
     <% if !@result.llo.nil? %>
     <%= link_to player_path(@result.llo) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path llo.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path llo.image.url %>)"></div>
       <div class="position-player">
         <%= llo.name %>/<%= llo.gakunen %>年
         <b>LO</b>
@@ -148,7 +148,7 @@
     <% rlo = Player.find_by(id: @result.rlo)%>
     <% if !@result.rlo.nil? %>
     <%= link_to player_path(@result.rlo) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path rlo.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path rlo.image.url %>)"></div>
       <div class="position-player">
         <%= rlo.name %>/<%= rlo.gakunen %>年
         <b>LO</b>
@@ -166,7 +166,7 @@
     <% lfl = Player.find_by(id: @result.lfl)%>
     <% if !@result.lfl.nil? %>
     <%= link_to player_path(@result.lfl) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path lfl.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path lfl.image.url %>)"></div>
       <div class="position-player">
         <%= lfl.name %>/<%= lfl.gakunen %>年
         <b>FL</b>
@@ -184,7 +184,7 @@
     <% n08 = Player.find_by(id: @result.n08)%>
     <% if !@result.n08.nil? %>
     <%= link_to player_path(@result.n08) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path n08.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path n08.image.url %>)"></div>
       <div class="position-player">
         <%= n08.name %>/<%= n08.gakunen %>年
         <b>No.8</b>
@@ -202,7 +202,7 @@
     <% rfl = Player.find_by(id: @result.rfl)%>
     <% if !@result.rfl.nil? %>
     <%= link_to player_path(@result.rfl) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path rfl.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path rfl.image.url %>)"></div>
       <div class="position-player">
         <%= rfl.name %>/<%= rfl.gakunen %>年
         <b>FL</b>
@@ -220,7 +220,7 @@
     <% sh = Player.find_by(id: @result.sh)%>
     <% if !@result.sh.nil? %>
     <%= link_to player_path(@result.sh) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path sh.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path sh.image.url %>)"></div>
       <div class="position-player">
         <%= sh.name %>/<%= sh.gakunen %>年
         <b>SH</b>
@@ -238,7 +238,7 @@
     <% so = Player.find_by(id: @result.so)%>
     <% if !@result.so.nil? %>
     <%= link_to player_path(@result.so) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path so.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path so.image.url %>)"></div>
       <div class="position-player">
         <%= so.name %>/<%= so.gakunen %>年
         <b>SO</b>
@@ -257,7 +257,7 @@
     <% lctb = Player.find_by(id: @result.lctb)%>
     <% if !@result.lctb.nil? %>
     <%= link_to player_path(@result.lctb) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path lctb.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path lctb.image.url %>)"></div>
       <div class="position-player">
         <%= lctb.name %>/<%= lctb.gakunen %>年
         <b>CTB</b>
@@ -275,7 +275,7 @@
     <% rctb = Player.find_by(id: @result.rctb)%>
     <% if !@result.rctb.nil? %>
     <%= link_to player_path(@result.rctb) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path rctb.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path rctb.image.url %>)"></div>
       <div class="position-player">
         <%= rctb.name %>/<%= rctb.gakunen %>年
         <b>CTB</b>
@@ -293,7 +293,7 @@
     <% lwtb = Player.find_by(id: @result.lwtb)%>
     <% if !@result.lwtb.nil? %>
     <%= link_to player_path(@result.lwtb) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path lwtb.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path lwtb.image.url %>)"></div>
       <div class="position-player">
         <%= lwtb.name %>/<%= lwtb.gakunen %>年
         <b>WTB</b>
@@ -311,7 +311,7 @@
     <% rwtb = Player.find_by(id: @result.rwtb)%>
     <% if !@result.rwtb.nil? %>
     <%= link_to player_path(@result.rwtb) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path rwtb.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path rwtb.image.url %>)"></div>
       <div class="position-player">
         <%= rwtb.name %>/<%= rwtb.gakunen %>年
         <b>WTB</b>
@@ -329,7 +329,7 @@
     <% fb = Player.find_by(id: @result.fb)%>
     <% if !@result.fb.nil? %>
     <%= link_to player_path(@result.fb) do %>
-      <div class="position-image" style="background-image: url(<%= asset_path fb.image %>)"></div>
+      <div class="position-image" style="background-image: url(<%= asset_path fb.image.url %>)"></div>
       <div class="position-player">
         <%= fb.name %>/<%= fb.gakunen %>年
         <b>FB</b>

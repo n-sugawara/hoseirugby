@@ -20,7 +20,7 @@
 <li class="photo-list">
   <%= link_to photo_path(photo.id) do %>
         <%= photo.result.time.strftime("%Y年%m月%d日") %>
-        <div class="photo-image" style="background-image: url(<%= asset_path photo.image %>)"></div>
+        <div class="photo-image" style="background-image: url(<%= asset_path photo.image.url %>)"></div>
         <% end %>
         <%= photo.player.name %>
         <% if user_signed_in? %>
