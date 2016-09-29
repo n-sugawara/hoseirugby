@@ -249,6 +249,28 @@
       <% end %>
     </ul>
 
+    <h2>学生レフリー</h2>
+    <ul>
+      <% @rehuri.each do |player| %>
+      <li class="player-list">
+        <%= link_to player_path(player.id) do %>
+          <div class="player-list-image" style="background-image: url(<%= asset_path player.image %>)"></div>
+          <div class="player-list-detail">
+            <div class="player-list-gakunen">
+            <%= player.gakunen %>年
+          </div>
+          <div class="player-list-yomi">
+            <%= player.yomi %>
+            </div>
+            <div class="player-list-name">
+          <%= player.name %>
+          </div>
+          </div>
+      <% end %>
+      </li>
+      <% end %>
+    </ul>
+
     <h2>COACH</h2>
     <ul>
       <% @coach.each do |player| %>
