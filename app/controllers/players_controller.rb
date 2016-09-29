@@ -11,7 +11,7 @@ class PlayersController < ApplicationController
     @ho = Player.where(position: "HO")
     @lo = Player.where(position: "LO")
     @fl = Player.where(position: "FL")
-    @no8 = Player.where(position: "NO8")
+    @no8 = Player.where(position: "NO.8")
     @sh = Player.where(position: "SH")
     @so = Player.where(position: "SO")
     @ctb = Player.where(position: "CTB")
