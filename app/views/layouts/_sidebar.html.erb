@@ -24,12 +24,13 @@
       <li class="result-side-list">
             <div class="result-side-time"><%= result.time.strftime("%Y年%m月%d日") %>
             <%= result.category %></div>
+            <div class="result-side-kekka">
             <%= result.team %>
             <% myresult = result.score_first_t*5 + result.score_first_g*2 + result.score_first_pg*3 + result.score_first_dg*3 + result.score_second_t*5 + result.score_second_g*2 + result.score_second_pg*3 + result.score_second_dg*3 %>
             <% opponentresult = result.opponent_score_first_t*5 + result.opponent_score_first_g*2 + result.opponent_score_first_pg*3 + result.opponent_score_first_dg*3 + result.opponent_score_second_t*5 + result.opponent_score_second_g*2 +
             result.opponent_score_second_pg*3 + result.opponent_score_second_dg*3 %>
             <%= myresult %>-<%= opponentresult %>
-            <div class="result-side-kekka"><%= link_to result_path(result.id) do %><%= result.opponent %><% end %>
+            <%= link_to result_path(result.id) do %><%= result.opponent %><% end %>
                 <% if myresult > opponentresult %>
                 ◯
                 <% elsif myresult < opponentresult %>
