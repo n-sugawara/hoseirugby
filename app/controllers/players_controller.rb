@@ -17,6 +17,7 @@ class PlayersController < ApplicationController
     @ctb = Player.where(position: "CTB")
     @wtb = Player.where(position: "WTB")
     @fb = Player.where(position: "FB")
+    @manager = Player.where(position: "マネージャー")
     @coach = Player.where(position: "COACH")
     @staff = Player.where(position: "STAFF")
   end
