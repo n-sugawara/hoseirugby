@@ -1,4 +1,4 @@
-<%= render 'layouts/header2' %>
+<%= render 'layouts/topic_header' %>
 <div class="content">
   <div class="all">
     <p class="notice"><%= notice %></p>
@@ -6,7 +6,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="left-content">
-<div class="topic-detail-category"><%= @topic.category %></div>   <%= @topic.data %>
+<div class="topic-detail-category"><%= @topic.category %></div>  <%= @topic.data.strftime("%Y年%m月%d日") %>
 <br>
 <h1 class="topic-detail-title"><%= @topic.title %></h1>
 <div class="topic-detail-image"><%= image_tag @topic.image.url if @topic.image? %></div>

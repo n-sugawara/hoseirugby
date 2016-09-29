@@ -4,11 +4,11 @@ class HomesController < ApplicationController
     @sideresults = Result.order(time: :desc)
   end
 
-  def link
+  def schedule
     @sideresults = Result.order(time: :desc)
   end
 
-  def history
+  def info
     @sidetopics = Topic.order(data: :desc)
     @sideresults = Result.order(time: :desc)
   end

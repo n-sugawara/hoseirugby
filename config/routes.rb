@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  get 'homes/link'
+  get 'homes/schedule'
 
-  get 'homes/history'
+  get 'homes/info'
   resources :results
   resources :photos
   resources :topics
