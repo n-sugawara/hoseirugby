@@ -4,27 +4,27 @@ class ResultsController < ApplicationController
   # GET /results
   # GET /results.json
   def index
-    @results = Result.page(params[:page])
-    @sidetopics = Topic.order(created_at: :desc)
-    @sideresults = Result.order(created_at: :desc)
+    @results = Result.order(time: :desc).page(params[:page])
+    @sidetopics = Topic.order(data: :desc)
+    @sideresults = Result.order(time: :desc)
   end
 
   # GET /results/1
   # GET /results/1.json
   def show
-    @sidetopics = Topic.order(created_at: :desc)
-    @sideresults = Result.order(created_at: :desc)
+    @sidetopics = Topic.order(data: :desc)
+    @sideresults = Result.order(time: :desc)
   end
 
   # GET /results/new
   def new
     @result = Result.new
-    @sideresults = Result.order(created_at: :desc)
+    @sideresults = Result.order(time: :desc)
   end
 
   # GET /results/1/edit
   def edit
-    @sideresults = Result.order(created_at: :desc)
+    @sideresults = Result.order(time: :desc)
   end
 
   # POST /results

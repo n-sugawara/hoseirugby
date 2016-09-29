@@ -5,8 +5,8 @@ class PlayersController < ApplicationController
   # GET /players.json
   def index
     @players = Player.find_by(position: "LO")
-    @sidetopics = Topic.order(created_at: :desc)
-    @sideresults = Result.order(created_at: :desc)
+    @sidetopics = Topic.order(data: :desc)
+    @sideresults = Result.order(time: :desc)
     @pr = Player.where(position: "PR")
     @ho = Player.where(position: "HO")
     @lo = Player.where(position: "LO")
@@ -24,19 +24,19 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
-    @sidetopics = Topic.order(created_at: :desc)
-    @sideresults = Result.order(created_at: :desc)
+    @sidetopics = Topic.order(data: :desc)
+    @sideresults = Result.order(time: :desc)
   end
 
   # GET /players/new
   def new
     @player = Player.new
-    @sideresults = Result.order(created_at: :desc)
+    @sideresults = Result.order(time: :desc)
   end
 
   # GET /players/1/edit
   def edit
-    @sideresults = Result.order(created_at: :desc)
+    @sideresults = Result.order(time: :desc)
   end
 
   # POST /players

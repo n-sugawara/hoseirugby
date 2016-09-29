@@ -4,9 +4,9 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.page(params[:page])
-    @sidetopics = Topic.order(created_at: :desc)
-    @sideresults = Result.order(created_at: :desc)
+    @photos = Photo.order(created_at: :desc).page(params[:page])
+    @sidetopics = Topic.order(data: :desc)
+    @sideresults = Result.order(time: :desc)
 
     # パラメータとして名前か性別を受け取っている場合は絞って検索する
      if params[:player_id].present?
@@ -20,20 +20,20 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
-    @sidetopics = Topic.order(created_at: :desc)
-    @sideresults = Result.order(created_at: :desc)
+    @sidetopics = Topic.order(data: :desc)
+    @sideresults = Result.order(time: :desc)
 
   end
 
   # GET /photos/new
   def new
     @photo = Photo.new
-    @sideresults = Result.order(created_at: :desc)
+    @sideresults = Result.order(time: :desc)
   end
 
   # GET /photos/1/edit
   def edit
-    @sideresults = Result.order(created_at: :desc)
+    @sideresults = Result.order(time: :desc)
   end
 
   # POST /photos
