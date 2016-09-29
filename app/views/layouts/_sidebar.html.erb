@@ -28,9 +28,8 @@
             <% myresult = result.score_first_t*5 + result.score_first_g*2 + result.score_first_pg*3 + result.score_first_dg*3 + result.score_second_t*5 + result.score_second_g*2 + result.score_second_pg*3 + result.score_second_dg*3 %>
             <% opponentresult = result.opponent_score_first_t*5 + result.opponent_score_first_g*2 + result.opponent_score_first_pg*3 + result.opponent_score_first_dg*3 + result.opponent_score_second_t*5 + result.opponent_score_second_g*2 +
             result.opponent_score_second_pg*3 + result.opponent_score_second_dg*3 %>
-            <%= myresult %>
-                -<%= opponentresult %>
-
+            <%= myresult %>-<%= opponentresult %>
+            <%= result.team %>
                 <% if myresult > opponentresult %>
                 ◯
                 <% elsif myresult < opponentresult %>
