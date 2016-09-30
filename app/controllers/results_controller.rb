@@ -78,6 +78,9 @@ class ResultsController < ApplicationController
       params.require(:result).permit(:time, :category, :team, :opponent, :score_first_t, :score_first_g, :score_first_pg, :score_first_dg, :score_second_t,
        :score_second_g, :score_second_pg, :score_second_dg, :opponent_score_first_t, :opponent_score_first_g, :opponent_score_first_pg,
        :opponent_score_first_dg, :opponent_score_second_t, :opponent_score_second_g, :opponent_score_second_pg, :opponent_score_second_dg,
-       :ho, :rpr, :lpr, :rlo, :llo, :rfl, :lfl, :n08, :sh, :so, :rctb, :lctb, :rwtb, :lwtb, :fb, :place)
+       :ho, :rpr, :lpr, :rlo, :llo, :rfl, :lfl, :n08, :sh, :so, :rctb, :lctb, :rwtb, :lwtb, :fb, :place,
+       backupplayers_attributes: [:id, :result_id, :player_id, :_destroy],
+       chengeplayers_attributes: [:id, :result_id, :time1, :time2, :in_player, :back_player, :_destroy],
+       goalplayers_attributes: [:id, :result_id, :time1, :time2, :player_id, :goalkind, :point, :_destroy])
     end
 end

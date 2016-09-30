@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  result_id: 1
+  time1: MyString
+  time2: 1
+  back_player_id: 1
+  in_player_id: 1
+
+two:
+  result_id: 1
+  time1: MyString
+  time2: 1
+  back_player_id: 1
+  in_player_id: 1

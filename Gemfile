@@ -31,6 +31,8 @@ gem 'devise', '~> 3.4.0'
 gem 'rails_admin', '~> 0.8.1'
 gem 'kaminari'
 
+gem 'nested_form_fields'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

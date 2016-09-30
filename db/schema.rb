@@ -11,7 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926053936) do
+ActiveRecord::Schema.define(version: 20160929181954) do
+
+  create_table "backupplayers", force: :cascade do |t|
+    t.integer  "result_id"
+    t.integer  "player_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chengeplayers", force: :cascade do |t|
+    t.integer  "result_id"
+    t.string   "time1"
+    t.integer  "time2"
+    t.string   "back_player"
+    t.string   "in_player"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "goalplayers", force: :cascade do |t|
+    t.integer  "result_id"
+    t.string   "time1"
+    t.integer  "time2"
+    t.integer  "player_id"
+    t.string   "goalkind"
+    t.integer  "point"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "photos", force: :cascade do |t|
     t.string   "image"

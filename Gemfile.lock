@@ -208,6 +208,10 @@ GEM
     minitest (5.9.1)
     multi_json (1.12.1)
     nested_form (0.3.2)
+    nested_form_fields (0.8)
+      coffee-rails (>= 3.2.1)
+      jquery-rails
+      rails (>= 3.2.0)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -322,6 +326,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  nested_form_fields
   pg
   puma (= 2.11.1)
   rails (= 4.2.5)
