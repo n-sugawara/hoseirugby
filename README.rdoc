@@ -1,28 +1,39 @@
-== README
+【RubyonRails開発環境構築手順】
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RubyonRailsで開発をするための準備URLを記載致します。
+以下を参考にし、RubyonRailsの開発環境を構築してください。
 
-Things you may want to cover:
+なお、エラーの発生を防ぐため、バージョンは以下で統一してください。
 
-* Ruby version
+* Ruby バージョン
+ruby 2.0.0p647
 
-* System dependencies
+*rails　バージョン
+Rails 4.2.5
 
-* Configuration
+「Ruby on Rails 4.2 を Windows にインストールする手順をかなり丁寧に説明してみました」
+https://www.oiax.jp/rails/zakkan/rails_4_2_installation_on_windows.html
 
-* Database creation
+「Windows10にRuby on Railsをインストール方法をやさしく解説」
+http://skillhub.jp/blogs/160
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+「WindowsでのRuby on Rails – 開発環境構築からアプリケーション実行まで」
+http://dev.classmethod.jp/server-side/ruby-on-rails/windows_ruby-on-rails_run/
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+herokuでの本番アップロード準備
+
+gitのインストール[パソコンの環境windowsに]
+http://www.backlog.jp/git-guide/intro/intro2_1.html
+http://www.backlog.jp/git-guide/intro/intro2_2.html
+
+Git鍵認証設定
+http://blog.infinity-dimensions.com/2012/01/git-gui-create-public-key.html
+
+Windowsでのheroku toolbeltインストール
+http://blog.infinity-dimensions.com/2012/01/heroku-toolbelt-install.html
+https://devcenter.heroku.com/articles/heroku-command-line
+
+herokuで鍵登録
+http://blog.infinity-dimensions.com/2012/02/heroku-public-key-add.html
