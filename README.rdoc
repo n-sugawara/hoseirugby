@@ -22,18 +22,23 @@ http://dev.classmethod.jp/server-side/ruby-on-rails/windows_ruby-on-rails_run/
 
 
 
-herokuでの本番アップロード準備
+本番アップロード準備
 
 gitのインストール[パソコンの環境windowsに]
 http://www.backlog.jp/git-guide/intro/intro2_1.html
 http://www.backlog.jp/git-guide/intro/intro2_2.html
 
 Git鍵認証設定
-http://blog.infinity-dimensions.com/2012/01/git-gui-create-public-key.html
+http://www.backlog.jp/git-guide/reference/ssh.html
 
-Windowsでのheroku toolbeltインストール
-http://blog.infinity-dimensions.com/2012/01/heroku-toolbelt-install.html
-https://devcenter.heroku.com/articles/heroku-command-line
+Gitクローン
+http://www.backlog.jp/git-guide/intro/intro4_3.html
+--urlは(git@github.com:shimaichirou/hoseirugby.git)を入力
 
-herokuで鍵登録
-http://blog.infinity-dimensions.com/2012/02/heroku-public-key-add.html
+
+本番アップロード方法
+1,ファイルの変更、修正、追加
+http://www.backlog.jp/git-guide/intro/intro2_4.html
+2,アップロード
+http://www.backlog.jp/git-guide/intro/intro4_4.html
+3,完了！！
