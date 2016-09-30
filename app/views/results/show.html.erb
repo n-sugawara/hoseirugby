@@ -347,13 +347,13 @@
         <div class="backupplayer">
             <h3 class="resulth3">Buckup Player</h3>
             <ul>
-                <% @result.players.each do |backupplayer| %>
+                <% @result.backupplayers.each do |backupplayer| %>
                 <li class="backposi">
-                    <%= link_to player_path(backupplayer.id) do %>
-                    <div class="position-image" style="background-image: url(<%= asset_path backupplayer.image.url %>)"></div>
+                    <%= link_to player_path(backupplayer.player_id) do %>
+                    <div class="position-image" style="background-image: url(<%= asset_path backupplayer.player.image.url %>)"></div>
                     <div class="position-player">
-                        <%= backupplayer.name %>/<%= backupplayer.gakunen %>年
-                        <b><%= backupplayer.position %></b>
+                        <%= backupplayer.player.name %>/<%= backupplayer.player.gakunen %>年
+                        <b><%= backupplayer.player.position %></b>
                     </div>
                     <% end %>
                 </li>
