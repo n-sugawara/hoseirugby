@@ -1,6 +1,6 @@
 class Topic < ActiveRecord::Base
   mount_uploader :image, ImageUploader
-  validate  :picture_size
+  # validate  :picture_size
 
   private
 

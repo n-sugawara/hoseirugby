@@ -1,7 +1,7 @@
 class Player < ActiveRecord::Base
   has_many :photos
   mount_uploader :image, ImageUploader
-  validate  :picture_size
+  # validate  :picture_size
   has_many :results, through: :backupplayers
   has_many :backupplayers
   has_many :results, through: :chengeplayers
