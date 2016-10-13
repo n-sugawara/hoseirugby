@@ -15,7 +15,7 @@
             <%= topic.category %>
           </div>
           <div class="top-topic-data">
-          <%= topic.data %>
+          <%= topic.data.strftime("%Y年%m月%d日") %>
           </div>
           <div class="top-topic-title">
             <%= topic.title.truncate(20) %>
