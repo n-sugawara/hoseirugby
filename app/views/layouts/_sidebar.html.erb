@@ -6,7 +6,7 @@
           <%= link_to topic_path(topic.id) do %>
           <div class="topic-side-category"><%= topic.category %></div>
           <div class="topic-side-detail">
-              <%= topic.data %>
+              <%= topic.data.strftime("%Y年%m月%d日") %>
               <%= topic.title %>
           </div>
           <% end %>
