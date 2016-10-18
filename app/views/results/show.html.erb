@@ -12,6 +12,7 @@
             <%= @result.time.strftime("%Y年%m月%d日") %>
             <div class="result-index">
                 <div class="result-myteam">
+                    <% if !@result.score_first_t.nil? %>
                     <h3><%= @result.team %></h3>
                     <% myresult = @result.score_first_t*5 + @result.score_first_g*2 + @result.score_first_pg*3 + @result.score_first_dg*3 + @result.score_second_t*5 + @result.score_second_g*2 + @result.score_second_pg*3 + @result.score_second_dg*3 %>
                     <div class="result-mypoint"><%= myresult %></div>
@@ -35,385 +36,408 @@
                     <div class="result-opponentpoint"><%= opponentresult %></div>
                 </div>
             </div>
-            <table class="result-detail-table">
-                <tr class="detail-table-tr">
-                    <th class="detail-table">T</th>
-                    <th class="detail-table">G</th>
-                    <th class="detail-table">PG</th>
-                    <th class="detail-table">DG</th>
-                    <th class="detail-table"></th>
-                    <th class="detail-table">T</th>
-                    <th class="detail-table">G</th>
-                    <th class="detail-table">PG</th>
-                    <th class="detail-table">DG</th>
-                </tr>
-                <tr class="detail-table-tr">
-                    <th class="detail-table"><%= @result.score_first_t %></th>
-                    <th class="detail-table"><%= @result.score_first_g %></th>
-                    <th class="detail-table"><%= @result.score_first_pg %></th>
-                    <th class="detail-table"><%= @result.score_first_dg %></th>
-                    <th class="detail-table">前半</th>
-                    <th class="detail-table"><%= @result.opponent_score_first_t %></th>
-                    <th class="detail-table"><%= @result.opponent_score_first_g %></th>
-                    <th class="detail-table"><%= @result.opponent_score_first_pg %></th>
-                    <th class="detail-table"><%= @result.opponent_score_first_dg %></th>
-                </tr>
-                <tr class="detail-table-tr">
-                    <th class="detail-table"><%= @result.score_second_t %></th>
-                    <th class="detail-table"><%= @result.score_second_g %></th>
-                    <th class="detail-table"><%= @result.score_second_pg %></th>
-                    <th class="detail-table"><%= @result.score_second_dg %></th>
-                    <th class="detail-table">後半</th>
-                    <th class="detail-table"><%= @result.opponent_score_second_t %></th>
-                    <th class="detail-table"><%= @result.opponent_score_second_g %></th>
-                    <th class="detail-table"><%= @result.opponent_score_second_pg %></th>
-                    <th class="detail-table"><%= @result.opponent_score_second_dg %></th>
-                </tr>
-            </table>
+        <% else %>
+            <h3><%= @result.team %></h3>
+            <div class="result-mypoint"></div>
         </div>
-        <h2 class="resulth2">試合詳細</h2>
-        <div class="result-position">
-            <div class="result-lpr posi">
-                <% lpr = Player.find_by(id: @result.lpr)%>
-                <% if !@result.lpr.nil? %>
-                <%= link_to player_path(@result.lpr) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path lpr.image.url %>)"></div>
-                <div class="position-player">
-                    <%= lpr.name %>/<%= lpr.gakunen %>年
-                    <b>PR</b>
-                </div>
-                <% end %>
-                <% elsif @result.lpr.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>PR</b>
-                </div>
-                <% end %>
-            </div>
+        <div class="result-goal">
+            <div class="result-mygoal">
 
-            <div class="result-ho posi">
-                <% ho = Player.find_by(id: @result.ho)%>
-                <% if !@result.ho.nil? %>
-                <%= link_to player_path(@result.ho) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path ho.image.url %>)"></div>
-                <div class="position-player">
-                    <%= ho.name %>/<%= ho.gakunen %>年
-                    <b>HO</b>
-                </div>
-                <% end %>
-                <% elsif @result.ho.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>HO</b>
-                </div>
-                <% end %>
-            </div>
+                前半
 
-            <div class="result-rpr posi">
-                <% rpr = Player.find_by(id: @result.rpr)%>
-                <% if !@result.rpr.nil? %>
-                <%= link_to player_path(@result.rpr) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path rpr.image.url %>)"></div>
-                <div class="position-player">
-                    <%= rpr.name %>/<%= rpr.gakunen %>年
-                    <b>PR</b>
-                </div>
-                <% end %>
-                <% elsif @result.rpr.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>PR</b>
-                </div>
-                <% end %>
             </div>
+            <div class="result-opponentgoal">
 
-            <div class="result-llo posi">
-                <% llo = Player.find_by(id: @result.llo)%>
-                <% if !@result.llo.nil? %>
-                <%= link_to player_path(@result.llo) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path llo.image.url %>)"></div>
-                <div class="position-player">
-                    <%= llo.name %>/<%= llo.gakunen %>年
-                    <b>LO</b>
-                </div>
-                <% end %>
-                <% elsif @result.llo.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>LO</b>
-                </div>
-                <% end %>
-            </div>
+                後半
 
-            <div class="result-rlo posi">
-                <% rlo = Player.find_by(id: @result.rlo)%>
-                <% if !@result.rlo.nil? %>
-                <%= link_to player_path(@result.rlo) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path rlo.image.url %>)"></div>
-                <div class="position-player">
-                    <%= rlo.name %>/<%= rlo.gakunen %>年
-                    <b>LO</b>
-                </div>
-                <% end %>
-                <% elsif @result.rlo.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>LO</b>
-                </div>
-                <% end %>
-            </div>
-
-            <div class="result-lfl posi">
-                <% lfl = Player.find_by(id: @result.lfl)%>
-                <% if !@result.lfl.nil? %>
-                <%= link_to player_path(@result.lfl) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path lfl.image.url %>)"></div>
-                <div class="position-player">
-                    <%= lfl.name %>/<%= lfl.gakunen %>年
-                    <b>FL</b>
-                </div>
-                <% end %>
-                <% elsif @result.lfl.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>FL</b>
-                </div>
-                <% end %>
-            </div>
-
-            <div class="result-n08 posi">
-                <% n08 = Player.find_by(id: @result.n08)%>
-                <% if !@result.n08.nil? %>
-                <%= link_to player_path(@result.n08) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path n08.image.url %>)"></div>
-                <div class="position-player">
-                    <%= n08.name %>/<%= n08.gakunen %>年
-                    <b>No.8</b>
-                </div>
-                <% end %>
-                <% elsif @result.n08.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>No.8</b>
-                </div>
-                <% end %>
-            </div>
-
-            <div class="result-rfl posi">
-                <% rfl = Player.find_by(id: @result.rfl)%>
-                <% if !@result.rfl.nil? %>
-                <%= link_to player_path(@result.rfl) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path rfl.image.url %>)"></div>
-                <div class="position-player">
-                    <%= rfl.name %>/<%= rfl.gakunen %>年
-                    <b>FL</b>
-                </div>
-                <% end %>
-                <% elsif @result.rfl.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>FL</b>
-                </div>
-                <% end %>
-            </div>
-
-            <div class="result-sh posi">
-                <% sh = Player.find_by(id: @result.sh)%>
-                <% if !@result.sh.nil? %>
-                <%= link_to player_path(@result.sh) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path sh.image.url %>)"></div>
-                <div class="position-player">
-                    <%= sh.name %>/<%= sh.gakunen %>年
-                    <b>SH</b>
-                </div>
-                <% end %>
-                <% elsif @result.sh.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>SH</b>
-                </div>
-                <% end %>
-            </div>
-
-            <div class="result-so posi">
-                <% so = Player.find_by(id: @result.so)%>
-                <% if !@result.so.nil? %>
-                <%= link_to player_path(@result.so) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path so.image.url %>)"></div>
-                <div class="position-player">
-                    <%= so.name %>/<%= so.gakunen %>年
-                    <b>SO</b>
-                </div>
-                <% end %>
-                <% elsif @result.so.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>SO</b>
-                </div>
-                <% end %>
-            </div>
-
-            <div class="result-lctb posi">
-                <% lctb = Player.find_by(id: @result.lctb)%>
-                <% if !@result.lctb.nil? %>
-                <%= link_to player_path(@result.lctb) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path lctb.image.url %>)"></div>
-                <div class="position-player">
-                    <%= lctb.name %>/<%= lctb.gakunen %>年
-                    <b>CTB</b>
-                </div>
-                <% end %>
-                <% elsif @result.lctb.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>CTB</b>
-                </div>
-                <% end %>
-            </div>
-
-            <div class="result-rctb posi">
-                <% rctb = Player.find_by(id: @result.rctb)%>
-                <% if !@result.rctb.nil? %>
-                <%= link_to player_path(@result.rctb) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path rctb.image.url %>)"></div>
-                <div class="position-player">
-                    <%= rctb.name %>/<%= rctb.gakunen %>年
-                    <b>CTB</b>
-                </div>
-                <% end %>
-                <% elsif @result.rctb.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>CTB</b>
-                </div>
-                <% end %>
-            </div>
-
-            <div class="result-lwtb posi">
-                <% lwtb = Player.find_by(id: @result.lwtb)%>
-                <% if !@result.lwtb.nil? %>
-                <%= link_to player_path(@result.lwtb) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path lwtb.image.url %>)"></div>
-                <div class="position-player">
-                    <%= lwtb.name %>/<%= lwtb.gakunen %>年
-                    <b>WTB</b>
-                </div>
-                <% end %>
-                <% elsif @result.lwtb.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>WTB</b>
-                </div>
-                <% end %>
-            </div>
-
-            <div class="result-rwtb posi">
-                <% rwtb = Player.find_by(id: @result.rwtb)%>
-                <% if !@result.rwtb.nil? %>
-                <%= link_to player_path(@result.rwtb) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path rwtb.image.url %>)"></div>
-                <div class="position-player">
-                    <%= rwtb.name %>/<%= rwtb.gakunen %>年
-                    <b>WTB</b>
-                </div>
-                <% end %>
-                <% elsif @result.rwtb.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>WTB</b>
-                </div>
-                <% end %>
-            </div>
-
-            <div class="result-fb posi">
-                <% fb = Player.find_by(id: @result.fb)%>
-                <% if !@result.fb.nil? %>
-                <%= link_to player_path(@result.fb) do %>
-                <div class="position-image" style="background-image: url(<%= asset_path fb.image.url %>)"></div>
-                <div class="position-player">
-                    <%= fb.name %>/<%= fb.gakunen %>年
-                    <b>FB</b>
-                </div>
-                <% end %>
-                <% elsif @result.fb.nil? %>
-                <div class="position-image" style="background: #eee)"></div>
-                <div class="position-player">
-                    <b>FB</b>
-                </div>
-                <% end %>
             </div>
         </div>
-
-        <div class="backupplayer">
-            <h3 class="resulth3">Buckup Player</h3>
-            <ul>
-                <% @result.backupplayers.each do |backupplayer| %>
-                <li class="backposi">
-                    <%= link_to player_path(backupplayer.player_id) do %>
-                    <div class="position-image" style="background-image: url(<%= asset_path backupplayer.player.image.url %>)"></div>
-                    <div class="position-player">
-                        <%= backupplayer.player.name %>/<%= backupplayer.player.gakunen %>年
-                        <b><%= backupplayer.player.position %></b>
-                    </div>
-                    <% end %>
-                </li>
-                <% end %>
-            </ul>
+        <div class="result-opponent">
+            <h3><%= @result.opponent %></h3>
+            <div class="result-opponentpoint"></div>
         </div>
-
-        <div class="backupplayer">
-            <h3 class="resulth3">ChengePlayer</h3>
-              <table class="result-table">
-                  <tbody>
-                      <tr>
-                          <th>前半/後半</th>
-                          <th>分</th>
-                          <th>退</th>
-                          <th>→</th>
-                          <th>入</th>
-                      </tr>
-                      <% @result.chengeplayers.each do |backupplayer| %>
-                      <tr>
-                      <td><%= backupplayer.time1 %></td>
-                      <td><%= backupplayer.time2 %></td>
-                      <td><%= backupplayer.back_player %></td>
-                      <td></td>
-                      <td><%= backupplayer.in_player %></td>
-                      </tr>
-                      <% end %>
-                  </tbody>
-              </table>
-        </div>
-
-        <div class="backupplayer">
-            <h3 class="resulth3">GoalPlayer</h3>
-              <table class="result-table">
-                  <tbody>
-                      <tr>
-                          <th>前半/後半</th>
-                          <th>分</th>
-                          <th>得点選手</th>
-                          <th>得点種類</th>
-                          <th>得点</th>
-                      </tr>
-                      <% @result.goalplayers.each do |backupplayer| %>
-                      <tr>
-                      <td><%= backupplayer.time1 %></td>
-                      <td><%= backupplayer.time2 %></td>
-                      <td><%= backupplayer.player.name %></td>
-                      <td><%= backupplayer.goalkind %></td>
-                      <td><%= backupplayer.point %></td>
-                      </tr>
-                      <% end %>
-                  </tbody>
-              </table>
-        </div>
-        <div class="result-show-admin">
-        <% if user_signed_in? %>
-        <%= link_to 'Edit', edit_result_path(@result) %>
-        |
-        <%= link_to 'Back', results_path %>
-        <% end %>
-      </div>
     </div>
+
+    <% end %>
+    <table class="result-detail-table">
+        <tr class="detail-table-tr">
+            <th class="detail-table">T</th>
+            <th class="detail-table">G</th>
+            <th class="detail-table">PG</th>
+            <th class="detail-table">DG</th>
+            <th class="detail-table"></th>
+            <th class="detail-table">T</th>
+            <th class="detail-table">G</th>
+            <th class="detail-table">PG</th>
+            <th class="detail-table">DG</th>
+        </tr>
+        <tr class="detail-table-tr">
+            <th class="detail-table"><%= @result.score_first_t %></th>
+            <th class="detail-table"><%= @result.score_first_g %></th>
+            <th class="detail-table"><%= @result.score_first_pg %></th>
+            <th class="detail-table"><%= @result.score_first_dg %></th>
+            <th class="detail-table">前半</th>
+            <th class="detail-table"><%= @result.opponent_score_first_t %></th>
+            <th class="detail-table"><%= @result.opponent_score_first_g %></th>
+            <th class="detail-table"><%= @result.opponent_score_first_pg %></th>
+            <th class="detail-table"><%= @result.opponent_score_first_dg %></th>
+        </tr>
+        <tr class="detail-table-tr">
+            <th class="detail-table"><%= @result.score_second_t %></th>
+            <th class="detail-table"><%= @result.score_second_g %></th>
+            <th class="detail-table"><%= @result.score_second_pg %></th>
+            <th class="detail-table"><%= @result.score_second_dg %></th>
+            <th class="detail-table">後半</th>
+            <th class="detail-table"><%= @result.opponent_score_second_t %></th>
+            <th class="detail-table"><%= @result.opponent_score_second_g %></th>
+            <th class="detail-table"><%= @result.opponent_score_second_pg %></th>
+            <th class="detail-table"><%= @result.opponent_score_second_dg %></th>
+        </tr>
+    </table>
+</div>
+<h2 class="resulth2">試合詳細</h2>
+<div class="result-position">
+    <div class="result-lpr posi">
+        <% lpr = Player.find_by(id: @result.lpr)%>
+        <% if !@result.lpr.nil? %>
+        <%= link_to player_path(@result.lpr) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path lpr.image.url %>)"></div>
+        <div class="position-player">
+            <%= lpr.name %>/<%= lpr.gakunen %>年
+            <b>PR</b>
+        </div>
+        <% end %>
+        <% elsif @result.lpr.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>PR</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-ho posi">
+        <% ho = Player.find_by(id: @result.ho)%>
+        <% if !@result.ho.nil? %>
+        <%= link_to player_path(@result.ho) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path ho.image.url %>)"></div>
+        <div class="position-player">
+            <%= ho.name %>/<%= ho.gakunen %>年
+            <b>HO</b>
+        </div>
+        <% end %>
+        <% elsif @result.ho.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>HO</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-rpr posi">
+        <% rpr = Player.find_by(id: @result.rpr)%>
+        <% if !@result.rpr.nil? %>
+        <%= link_to player_path(@result.rpr) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path rpr.image.url %>)"></div>
+        <div class="position-player">
+            <%= rpr.name %>/<%= rpr.gakunen %>年
+            <b>PR</b>
+        </div>
+        <% end %>
+        <% elsif @result.rpr.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>PR</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-llo posi">
+        <% llo = Player.find_by(id: @result.llo)%>
+        <% if !@result.llo.nil? %>
+        <%= link_to player_path(@result.llo) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path llo.image.url %>)"></div>
+        <div class="position-player">
+            <%= llo.name %>/<%= llo.gakunen %>年
+            <b>LO</b>
+        </div>
+        <% end %>
+        <% elsif @result.llo.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>LO</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-rlo posi">
+        <% rlo = Player.find_by(id: @result.rlo)%>
+        <% if !@result.rlo.nil? %>
+        <%= link_to player_path(@result.rlo) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path rlo.image.url %>)"></div>
+        <div class="position-player">
+            <%= rlo.name %>/<%= rlo.gakunen %>年
+            <b>LO</b>
+        </div>
+        <% end %>
+        <% elsif @result.rlo.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>LO</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-lfl posi">
+        <% lfl = Player.find_by(id: @result.lfl)%>
+        <% if !@result.lfl.nil? %>
+        <%= link_to player_path(@result.lfl) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path lfl.image.url %>)"></div>
+        <div class="position-player">
+            <%= lfl.name %>/<%= lfl.gakunen %>年
+            <b>FL</b>
+        </div>
+        <% end %>
+        <% elsif @result.lfl.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>FL</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-n08 posi">
+        <% n08 = Player.find_by(id: @result.n08)%>
+        <% if !@result.n08.nil? %>
+        <%= link_to player_path(@result.n08) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path n08.image.url %>)"></div>
+        <div class="position-player">
+            <%= n08.name %>/<%= n08.gakunen %>年
+            <b>No.8</b>
+        </div>
+        <% end %>
+        <% elsif @result.n08.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>No.8</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-rfl posi">
+        <% rfl = Player.find_by(id: @result.rfl)%>
+        <% if !@result.rfl.nil? %>
+        <%= link_to player_path(@result.rfl) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path rfl.image.url %>)"></div>
+        <div class="position-player">
+            <%= rfl.name %>/<%= rfl.gakunen %>年
+            <b>FL</b>
+        </div>
+        <% end %>
+        <% elsif @result.rfl.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>FL</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-sh posi">
+        <% sh = Player.find_by(id: @result.sh)%>
+        <% if !@result.sh.nil? %>
+        <%= link_to player_path(@result.sh) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path sh.image.url %>)"></div>
+        <div class="position-player">
+            <%= sh.name %>/<%= sh.gakunen %>年
+            <b>SH</b>
+        </div>
+        <% end %>
+        <% elsif @result.sh.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>SH</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-so posi">
+        <% so = Player.find_by(id: @result.so)%>
+        <% if !@result.so.nil? %>
+        <%= link_to player_path(@result.so) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path so.image.url %>)"></div>
+        <div class="position-player">
+            <%= so.name %>/<%= so.gakunen %>年
+            <b>SO</b>
+        </div>
+        <% end %>
+        <% elsif @result.so.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>SO</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-lctb posi">
+        <% lctb = Player.find_by(id: @result.lctb)%>
+        <% if !@result.lctb.nil? %>
+        <%= link_to player_path(@result.lctb) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path lctb.image.url %>)"></div>
+        <div class="position-player">
+            <%= lctb.name %>/<%= lctb.gakunen %>年
+            <b>CTB</b>
+        </div>
+        <% end %>
+        <% elsif @result.lctb.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>CTB</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-rctb posi">
+        <% rctb = Player.find_by(id: @result.rctb)%>
+        <% if !@result.rctb.nil? %>
+        <%= link_to player_path(@result.rctb) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path rctb.image.url %>)"></div>
+        <div class="position-player">
+            <%= rctb.name %>/<%= rctb.gakunen %>年
+            <b>CTB</b>
+        </div>
+        <% end %>
+        <% elsif @result.rctb.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>CTB</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-lwtb posi">
+        <% lwtb = Player.find_by(id: @result.lwtb)%>
+        <% if !@result.lwtb.nil? %>
+        <%= link_to player_path(@result.lwtb) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path lwtb.image.url %>)"></div>
+        <div class="position-player">
+            <%= lwtb.name %>/<%= lwtb.gakunen %>年
+            <b>WTB</b>
+        </div>
+        <% end %>
+        <% elsif @result.lwtb.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>WTB</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-rwtb posi">
+        <% rwtb = Player.find_by(id: @result.rwtb)%>
+        <% if !@result.rwtb.nil? %>
+        <%= link_to player_path(@result.rwtb) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path rwtb.image.url %>)"></div>
+        <div class="position-player">
+            <%= rwtb.name %>/<%= rwtb.gakunen %>年
+            <b>WTB</b>
+        </div>
+        <% end %>
+        <% elsif @result.rwtb.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>WTB</b>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="result-fb posi">
+        <% fb = Player.find_by(id: @result.fb)%>
+        <% if !@result.fb.nil? %>
+        <%= link_to player_path(@result.fb) do %>
+        <div class="position-image" style="background-image: url(<%= asset_path fb.image.url %>)"></div>
+        <div class="position-player">
+            <%= fb.name %>/<%= fb.gakunen %>年
+            <b>FB</b>
+        </div>
+        <% end %>
+        <% elsif @result.fb.nil? %>
+        <div class="position-image" style="background: #eee)"></div>
+        <div class="position-player">
+            <b>FB</b>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+<div class="backupplayer">
+    <h3 class="resulth3">Buckup Player</h3>
+    <ul>
+        <% @result.backupplayers.each do |backupplayer| %>
+        <li class="backposi">
+            <%= link_to player_path(backupplayer.player_id) do %>
+            <div class="position-image" style="background-image: url(<%= asset_path backupplayer.player.image.url %>)"></div>
+            <div class="position-player">
+                <%= backupplayer.player.name %>/<%= backupplayer.player.gakunen %>年
+                <b><%= backupplayer.player.position %></b>
+            </div>
+            <% end %>
+        </li>
+        <% end %>
+    </ul>
+</div>
+
+<div class="backupplayer">
+    <h3 class="resulth3">ChengePlayer</h3>
+    <table class="result-table">
+        <tbody>
+            <tr>
+                <th>前半/後半</th>
+                <th>分</th>
+                <th>退</th>
+                <th>→</th>
+                <th>入</th>
+            </tr>
+            <% @result.chengeplayers.each do |backupplayer| %>
+            <tr>
+                <td><%= backupplayer.time1 %></td>
+                <td><%= backupplayer.time2 %></td>
+                <td><%= backupplayer.back_player %></td>
+                <td></td>
+                <td><%= backupplayer.in_player %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
+<div class="backupplayer">
+    <h3 class="resulth3">GoalPlayer</h3>
+    <table class="result-table">
+        <tbody>
+            <tr>
+                <th>前半/後半</th>
+                <th>分</th>
+                <th>得点選手</th>
+                <th>得点種類</th>
+                <th>得点</th>
+            </tr>
+            <% @result.goalplayers.each do |backupplayer| %>
+            <tr>
+                <td><%= backupplayer.time1 %></td>
+                <td><%= backupplayer.time2 %></td>
+                <td><%= backupplayer.player.name %></td>
+                <td><%= backupplayer.goalkind %></td>
+                <td><%= backupplayer.point %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+<div class="result-show-admin">
+    <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_result_path(@result) %>
+    |
+    <%= link_to 'Back', results_path %>
+    <% end %>
+</div>
+</div>
 </div>

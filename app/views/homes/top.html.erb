@@ -65,12 +65,20 @@
         </div>
         <div class="top-result-point">
         <%= result.team %>
+        <% if !result.score_first_t.nil? %>
         <% myresult = result.score_first_t*5 + result.score_first_g*2 + result.score_first_pg*3 + result.score_first_dg*3 + result.score_second_t*5 + result.score_second_g*2 + result.score_second_pg*3 + result.score_second_dg*3 %>
         <% opponentresult = result.opponent_score_first_t*5 + result.opponent_score_first_g*2 + result.opponent_score_first_pg*3 + result.opponent_score_first_dg*3 + result.opponent_score_second_t*5 + result.opponent_score_second_g*2 +
         result.opponent_score_second_pg*3 + result.opponent_score_second_dg*3 %>
         <div class="top-result-goal">
           <%= myresult %> - <%= opponentresult %>
         </div>
+        <% else %>
+        <% myresult ="0" %>
+        <% opponentresult ="0" %>
+        <div class="top-result-goal">
+          <%= myresult %> - <%= opponentresult %>
+        </div>
+        <% end %>
         <%= result.opponent %>
         </div>
         <div class="top-result-category">
